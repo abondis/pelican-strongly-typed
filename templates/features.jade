@@ -13,9 +13,9 @@
       .4u
         // Feature
         section
-          //-if hasattr(article, 'picture')
-            //-a.image.image-full(href=SITEURL+"/"+article.url)
-              //-img(src=SITEURL+"/"+article.picture, alt='')
+          if article.picture
+            a.image.image-full(href=SITEURL+"/"+article.url)
+              img(src=SITEURL+"/"+article.picture, alt='')
           header
             h3= article.title
             span.byline= article.date
