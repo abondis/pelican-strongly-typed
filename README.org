@@ -1,0 +1,5 @@
+- pip install pyjade
+- add to pelicanconf.py
+  #+BEGIN_SRC python
+  JINJA_EXTENSIONS = (['pyjade.ext.jinja.PyJadeExtension'])
+  #+END_SRC
