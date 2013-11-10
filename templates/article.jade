@@ -8,6 +8,21 @@ block content
       .row
         // Content
         #content.8u
-          | {%- include 'content.html' %}
+          article.is-post
+            .image.image-full
+              img(src="{{ SITEURL }}/{{ article.picture }}")
+                a.img-copy(href="{{ article.picturecopyrights }}") {{ article.picturecopyrights }}
+            .post-infos
+              ul.tags
+                if article.category
+                  li
+                    a.button(href="{{ article.category.url }}") {{ article.category|capitalize }}
+                for tag in article.tags
+                  li
+                    a.button.button-alt(href="{{ tag.url }}") {{ tag|capitalize }}
+            .pennant.pennant-alt.date {{ article.date|strftime('%Y-%m-%d') }}
+            h2 {{ article.title }}
+            {{ article.content }}
+            | {% include 'disqus_script.html' %}
         | {%- include 'sidebar.html' %}
   | {%- include 'footer.html' %}

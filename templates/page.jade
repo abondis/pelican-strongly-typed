@@ -1,0 +1,26 @@
+extends "base.html"
+block content
+  | {%- include 'header.html' %}
+  // Main Wrapper
+  #main-wrapper
+    // Main
+    #main.container
+      .row
+        // Content
+        #content.12u
+          article.is-post
+            .image.image-full
+              img(src="{{ SITEURL }}/{{ page.picture }}")
+                a.img-copy(href="{{ page.picturecopyrights }}") {{ page.picturecopyrights }}
+            .post-infos
+              ul.tags
+                if page.category
+                  li
+                    a.button(href="{{ page.category.url }}") {{ page.category|capitalize }}
+                for tag in page.tags
+                  li
+                    a.button.button-alt(href="{{ tag.url }}") {{ tag|capitalize }}
+            h2 {{ page.title }}
+            {{ page.content }}
+            | {% include 'disqus_script.html' %}
+  | {%- include 'footer.html' %}
