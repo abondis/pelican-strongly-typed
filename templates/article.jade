@@ -14,13 +14,13 @@ block content
                 img(src="{{ SITEURL }}/{{ article.picture }}")
                   a.img-copy(href="{{ article.picturecopyrights }}") {{ article.picturecopyrights }}
             .post-infos
-              ul.links
+              ul
                 if article.category
-                  li
+                  li.button.tag-button
                     span
                       a.fa.fa-folder(href="{{ article.category.url }}") {{ article.category|capitalize }}
                 for tag in article.tags
-                  li
+                  li.button.tag-button
                     span
                       a.fa.fa-tag(href="{{ tag.url }}") {{ tag|capitalize }}
             .pennant.pennant-alt.date {{ article.date|strftime('%Y-%m-%d') }}
