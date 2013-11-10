@@ -1,1 +1,26 @@
-extends right-sidebar.html
+!!! 5
+//
+  Strongly Typed 1.1 by HTML5 UP
+  html5up.net | @n33co
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+  head
+    | {%- block head %}
+    title {% block title %}{{ SITENAME }}{% endblock title %}
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=1040')
+    link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700', rel='stylesheet', type='text/css')
+    noscript
+      link(rel='stylesheet', href='/theme/css/skel-noscript.css')
+      link(rel='stylesheet', href='/theme/css/style.css')
+      link(rel='stylesheet', href='/theme/css/style-desktop.css')
+    | {%- endblock head %}
+  body.homepage
+    | {% block content %}{% endblock content %}
+    //if lte IE 8
+      script(src='/theme/js/html5shiv.js')
+    script(src='/theme/js/jquery.min.js')
+    script(src='/theme/js/jquery.dropotron.min.js')
+    script(src='/theme/js/config.js')
+    script(src='/theme/js/skel.min.js')
+    script(src='/theme/js/skel-panels.min.js')
