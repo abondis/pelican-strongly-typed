@@ -1,9 +1,12 @@
-- pip install pyjade
-- add to pelicanconf.py
-  #+BEGIN_SRC python
-  JINJA_EXTENSIONS = (['pyjade.ext.jinja.PyJadeExtension'])
-  #+END_SRC
-- run ./prepare_html.sh
+* pelican-strongly-typed
+  Theme based on html5up-strongly-typed desing.
+  - pip install pyjade
+  - add to pelicanconf.py
+    #+BEGIN_SRC python
+    JINJA_EXTENSIONS = (['pyjade.ext.jinja.PyJadeExtension'])
+    #+END_SRC
+  - run ./prepare_html.sh
 
-There seems to be an issue with using jade files directly when running 'pelican'.
-So for now we have to prepare the html files by hand using pyjade
+  There seems to be an issue with using jade files directly when running 'pelican'.
+  So for now we have to prepare the html files by hand using pyjade
+
