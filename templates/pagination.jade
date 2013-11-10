@@ -1,0 +1,21 @@
+.row
+  if DEFAULT_PAGINATION
+    .button-tag
+      if articles_page.has_previous()
+        if articles_page.previous_page_number() == 1
+          span
+            a.button.fa.fa-2x(href=SITEURL +"/"+ page_name +".html")
+              span.fa.fa-chevron-circle-left &nbsp; &nbsp;
+              | Previous page
+        else
+          span
+            a.button.fa.fa-2x(href=SITEURL +"/"+ page_name + "%s" % articles_page.previous_page_number() +".html")
+              span.fa.fa-chevron-circle-left &nbsp; &nbsp;
+              | Previous page
+      span.fa.fa-2x
+        |  Page #{articles_page.number} / #{articles_paginator.num_pages}   
+      if articles_page.has_next()
+        span
+          a.button.fa.fa-2x(href=SITEURL +"/"+ page_name + "%s" % articles_page.next_page_number() +".html")
+            | Next page &nbsp; &nbsp;
+            span.fa.fa-chevron-circle-right
