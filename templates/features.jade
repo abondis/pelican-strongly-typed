@@ -1,59 +1,34 @@
-    // Features Wrapper
-    #features-wrapper
-      // Features
-      section#features.container
-        header
-          h2
-            | Gentlemen&comma; behold&excl; This is
-            strong Strongly Typed
-            | &excl;
+// Features Wrapper
+#features-wrapper
+  // Features
+  section#features.container
+    header
+      h2
+        | Gentlemen&comma; behold&excl; This is
+        strong Strongly Typed
+        | &excl;
+    for article in articles_page.object_list
+      if loop.index0 % 3  == 0
         .row
-          .4u
-            // Feature
-            section
-              a.image.image-full(href='http://regularjane.deviantart.com/art/Old-Reads-363428235')
-                img(src='/theme/images/pic01.jpg', alt='')
-              header
-                h3 Okay&comma; so what is this&quest;
-              p
-                | This is
-                strong Strongly Typed
-                | &comma; a free&comma; fully responsive site template
-                | by
-                a(href='http://html5up.net/') HTML5 UP
-                | . Free for personal and commercial use under the
-                a(href='http://html5up.net/license/') CCA 3.0 license
-                | .
-          .4u
-            // Feature
-            section
-              a.image.image-full(href='http://regularjane.deviantart.com/art/Nutella-359114563')
-                img(src='/theme/images/pic02.jpg', alt='')
-              header
-                h3 Nice&excl; What is HTML5 UP&quest;
-              p
-                a(href='http://html5up.net/') HTML5 UP
-                | is a side project of
-                a(href='http://n33.co') AJ&rsquor;s
-                | &lpar;ie. me&rpar;.
-                | I started it as a way to both test my
-                a(href='http://skeljs.org') skelJS
-                | framework &lpar;formerly
-                | 5grid&rpar; and sharpen up my design skills a bit.
-          .4u
-            // Feature
-            section
-              a.image.image-full(href='http://regularjane.deviantart.com/art/Solo-Spring-358679786')
-                img(src='/theme/images/pic03.jpg', alt='')
-              header
-                h3 skelJS&quest; WTF is that&quest;
-              p
-                a(href='http://skeljs.org') skelJS
-                | is a lightweight framework for building responsive
-                | sites and apps. All of my designs at
-                a(href='http://html5up.net/') HTML5 UP
-                | &lpar;including this
-                | one&rpar; are built on this framework.
-        ul.actions
-          li
-            a.button.button-icon.fa.fa-file(href='#') Tell Me More
+      .4u
+        // Feature
+        section
+          //-if hasattr(article, 'picture')
+            //-a.image.image-full(href=SITEURL+"/"+article.url)
+              //-img(src=SITEURL+"/"+article.picture, alt='')
+          header
+            h3= article.title
+            span.byline= article.date
+          article.summary
+          footer.actions
+            a.button.button-icon.fa.fa-file(href=SITEURL+"/"+article.url) Continue reading
+  if DEFAULT_PAGINATION
+    p.paginator
+      if articles_page.has_previous()
+        if articles_page.previous_page_number() == 1
+          a(href=SITEURL +"/"+ page_name +".html") &laquo;
+        else
+          a(href=SITEURL +"/"+ page_name + "%s" % articles_page.previous_page_number() +".html") &laquo;
+      Page #{articles_page.number} / #{articles_paginator.num_pages}
+      if articles_page.has_next()
+        a(href=SITEURL +"/"+ page_name + "%s" % articles_page.next_page_number() +".html") &raquo;
