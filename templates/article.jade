@@ -1,0 +1,13 @@
+extends "base.html"
+block content
+  | {%- include 'header.html' %}
+  // Main Wrapper
+  #main-wrapper
+    // Main
+    #main.container
+      .row
+        // Content
+        #content.8u
+          | {%- include 'content.html' %}
+        | {%- include 'sidebar.html' %}
+  | {%- include 'footer.html' %}
