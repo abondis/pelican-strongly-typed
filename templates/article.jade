@@ -1,4 +1,4 @@
-extends base.jade
+extends base.html
 block head
   {{ super() }}
   for keyword in article.keywords
@@ -29,9 +29,9 @@ block content
                   a.button.button-alt(href="{{ tag.url }}") {{ tag|capitalize }}
           .pennant.pennant-alt.date {{ article.date|strftime('%Y-%m-%d') }}
         span.image.image-full
-          img(src='{{ SITEURL }}/{{ article.picture }}', alt='')
+          img(src="{{ SITEURL }}/{{ article.picture }}", alt='')
         {{ article.content }}
-      include 'disqus_script.jade'
+      include disqus_script.html
 
     // Sidebar
-    include 'sidebar.jade'
+    include sidebar.html

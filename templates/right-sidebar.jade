@@ -43,7 +43,7 @@ html
           if DISPLAY_PAGES_ON_MENU
             for p in PAGES
               if p == page
-                set class="active"
+                - set class="active"
               li(class="{{class}}")
                 a.fa(href="{{ SITEURL }}/{{ p.url }}")
                   span {{ p.title }}
@@ -51,7 +51,7 @@ html
             if DISPLAY_CATEGORIES_ON_MENU
               for cat, null in categories
                 if cat == category
-                  set class="active" 
+                  - set class="active" 
                 li(class="{{class}}"
                   a.fa(href="{{ SITEURL }}/{{ cat.url }}")
                     span {{ cat }}
