@@ -9,9 +9,10 @@ block content
         // Content
         #content.8u
           article.is-post
-            .image.image-full
-              img(src="{{ SITEURL }}/{{ article.picture }}")
-                a.img-copy(href="{{ article.picturecopyrights }}") {{ article.picturecopyrights }}
+            if article.picture
+              .image.image-full
+                img(src="{{ SITEURL }}/{{ article.picture }}")
+                  a.img-copy(href="{{ article.picturecopyrights }}") {{ article.picturecopyrights }}
             .post-infos
               ul.tags
                 if article.category

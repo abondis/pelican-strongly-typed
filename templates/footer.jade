@@ -4,36 +4,60 @@
   #footer.container
     header
       h2
-        | Questions or comments&quest;
-        strong Get in touch&colon;
+        | Questions or comments?
+        strong Get in touch:
     .row
-      .12u
+      if ABOUT_TEXT is defined or ABOUT_IMAGE is defined or ABOUT_LINK is defined
+        .4u
+          section
+            header
+              h2 About
+            if ABOUT_LINK is defined 
+              a.image.image-full(href="{{ ABOUT_LINK }}")
+                img(src="{{ SITEURL }}/{{ ABOUT_IMAGE }}", alt="")
+            else
+              if ABOUT_IMAGE is defined
+                img.image.image-full(src="{{ SITEURL }}/{{ ABOUT_IMAGE }}", alt="")
+            p
+              {{ ABOUT_TEXT }}
+            footer
+              if ABOUT_LINK is defined
+                a.button(href="{{ ABOUT_LINK }}") Find out more
+      .8u
         section
-          p
-            | Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phaselamet
-            | mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur
-            | leo nibh&comma; rutrum eu malesuada.
           .row
-            ul.icons.6u
-              li.fa.fa-home
-                | 1234 Somewhere Road
-                br
-                | Nashville&comma; TN 00000
-                br
-                | USA
-              li.fa.fa-phone
-                | &lpar;000&rpar; 000-0000
-              li.fa.fa-envelope
-                a(href='#') info&commat;untitled.tld
-            ul.icons.6u
-              li.fa.fa-twitter
-                a(href='http://twitter.com/n33co') &commat;untitled-tld
-              li.fa.fa-dribbble
-                a(href='http://dribbble.com/n33') dribbble.com&sol;untitled-tld
-              li.fa.fa-facebook
-                a(href='#') facebook.com&sol;untitled-tld
-              li.fa.fa-google-plus
-                a(href='#') google.com&sol;&plus;untitled-tld
+            header
+              h2 Contact
+            ul.icons.4u
+              if TWITTER_USER is defined
+                li.fa.fa-twitter
+                  a(href='http://twitter.com/{{ TWITTER_USER }}') Twitter
+              if FACEBOOK_USER
+                li.fa.fa-facebook
+                  a(href="https://www.facebook.com/{{ FACEBOOK_USER }}") Facebook 
+              if GOOGLEPLUS_USER
+                li.fa.fa-google-plus
+                  a(href="https://plus.google.com/{{ GOOGLEPLUS_USER }}") Google+
+              if LINKEDIN_USER
+                li.fa.fa-linkedin
+                  a(href="http://www.linkedin.com/pub/{{ LINKEDIN_USER }}") LinkedIn
+              if GITHUB_URL
+                li.fa.fa-github
+                  a(href="http://www.github.com/{{ GITHUB_URL }}") Github
+            if ADDRESS is defined or MAIL is defined or PHONE is defined
+              ul.icons.4u
+                if ADDRESS is defined
+                  li.fa.fa-home
+                    Address
+                    p {{ ADDRESS }}
+                if MAIL is defined
+                  li.fa.fa-envelope
+                    Mail
+                    a(href="mailto:{{ MAIL }}"){{ MAIL }}
+                 if PHONE
+                   li.fa.fa-phone
+                     Phone
+                     a(href="tel:{{ PHONE }}") {{PHONE}}
   // Copyright
   #copyright.container
     ul.links
