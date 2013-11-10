@@ -1,11 +1,16 @@
 | {% extends "base.html" %}
 block content
   | {%- include 'header.html' %}
-  .u8
-    ul.links.fa.fa-stack-x
-      for tag in tag_cloud
-        if loop.index0 % 5  == 0
-          .row
-        li
-          a.fa.fa-tag(href="{{ SITEURL }}/{{ tag.0.url }}"){{ tag.0 }}
+  .row
+    .2u
+      &nbsp;
+    .8u
+      ul
+        for tag in tag_cloud
+          if loop.index0 % 5  == 0
+            .row
+          li.button.tag-button
+            a.fa.fa-tag(href="{{ SITEURL }}/{{ tag.0.url }}"){{ tag.0 }}
+    .2u
+      &nbsp;
   | {%- include 'footer.html' %}
