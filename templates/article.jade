@@ -14,13 +14,15 @@ block content
                 img(src="{{ SITEURL }}/{{ article.picture }}")
                   a.img-copy(href="{{ article.picturecopyrights }}") {{ article.picturecopyrights }}
             .post-infos
-              ul.tags
+              ul.links
                 if article.category
                   li
-                    a.button(href="{{ article.category.url }}") {{ article.category|capitalize }}
+                    span
+                      a.fa.fa-folder(href="{{ article.category.url }}") {{ article.category|capitalize }}
                 for tag in article.tags
                   li
-                    a.button.button-alt(href="{{ tag.url }}") {{ tag|capitalize }}
+                    span
+                      a.fa.fa-tag(href="{{ tag.url }}") {{ tag|capitalize }}
             .pennant.pennant-alt.date {{ article.date|strftime('%Y-%m-%d') }}
             h2 {{ article.title }}
             {{ article.content }}
