@@ -18,9 +18,8 @@
             li(class='active' if p == page)
               a.fa(href=SITEURL+"/"+ p.url)
                 span= p.title
-        else 
-          if DISPLAY_CATEGORIES_ON_MENU
-            for cat, null in categories
-              li(class='active' if cat == category)
-                a.fa(href=SITEURL+"/"+cat.url)
-                  span= cat
+        if DISPLAY_CATEGORIES_ON_MENU
+          for cat, null in categories
+            li(class='active' if cat == category)
+              a.fa(href=SITEURL+"/"+cat.url)
+                span= cat
