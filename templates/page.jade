@@ -1,0 +1,12 @@
+extends "base.jade"
+block content
+  .row
+    .12u
+      section
+        div
+          .row
+             .12u.skel-cell-mainContent
+               article.box.is-post
+                 a.image.image-full(href="#")
+                   img(src="{{ page.picture }}")
+                 {{ page.content }}

@@ -1,0 +1,35 @@
+extends "base.html"
+block content
+  // Main Wrapper
+  #main-wrapper
+    // Main
+    #main.container
+      .row
+        // Content
+        #content.8u
+          // Post
+          for article in articles_page.object_list
+            if loop.index0 % 3 == 0
+              .row
+            .4u
+              section.box
+                a.image.image-full(href="{{ SITEURL }}/{{ article.url }}")
+                  img(src="{{ SITEURL }}/{{ article.picture }}", alt="")
+                header
+                  h3 {{article.title }}
+                  span.byline {{ article.date }}
+                  {{ article.summary }}
+                footer.actions
+                  a.button.button-icon.fa.fa-file(href="{{ SITEURL }}/{{ article.url }}")Continue Reading
+        if DEFAULT_PAGINATION
+          p.paginator
+            if articles_page.has_previous()
+              if articles_page.previous_page_number() == 1
+                a(href="{{ SITEURL }}/{{ page_name }}.html") &laquo
+              else
+                a(href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html") &laquo;
+            Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+            if articles_page.has_next()
+              a(href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html")&raquo;
+        // Sidebar
+        include 'sidebar.jade'
