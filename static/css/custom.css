@@ -8,3 +8,7 @@
 .org-ul {
   list-style: disc;
 }
+
+#feature-wrapper pre {
+  overflow: hidden;
+}
