@@ -1,27 +1,32 @@
 // Features Wrapper
 #features-wrapper
-  // Features
-  section#features.container
-    header
-      h2
-        | Gentlemen&comma; behold&excl; This is
-        strong Strongly Typed
-        | &excl;
-    for article in articles_page.object_list
-      if loop.index0 % 3  == 0
-        .row
-      .4u
-        // Feature
-        section
-          if article.picture
-            a.image.image-full(href=SITEURL+"/"+article.url)
-              img(src=SITEURL+"/"+article.picture, alt='')
-          header
-            h3= article.title
-            span.byline= article.date
-          != article.summary
-          footer.actions
-            a.button.button-icon.fa.fa-file(href=SITEURL+"/"+article.url) Continue reading
+  .12u
+    // Features
+    section#features.container
+      header
+        h2
+          | Gentlemen&comma; behold&excl; This is
+          strong Strongly Typed
+          | &excl;
+      for article in articles_page.object_list
+        //- FIXME: gross workaround ...
+        if loop.index0 % 3  == 0
+          | <div class="row">
+        .4u
+          // Feature
+          section
+            if article.picture
+              a.image.image-full(href=SITEURL+"/"+article.url)
+                img(src=SITEURL+"/"+article.picture, alt='')
+            header
+              h3= article.title
+              span.byline= article.date
+            != article.summary
+            footer.actions
+              a.button.button-icon.fa.fa-file(href=SITEURL+"/"+article.url) Continue reading
+        //- FIXME: gross workaround ...
+        if loop.index0 % 3  == 2
+          | </div>
   section.container
     .row
       .12u

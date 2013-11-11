@@ -4,3 +4,7 @@
 .tag-button {
   padding: 0.2em 0.95em;
 }
+
+.org-ul {
+  list-style: disc;
+}
