@@ -9,6 +9,24 @@
   list-style: disc;
 }
 
-#feature-wrapper pre {
+#features-wrapper pre.src,
+#features-wrapper pre {
   overflow: hidden;
+}
+
+pre.src {
+  background-color: #ebebeb;
+  box-shadow: 3px 3px #666;
+  overflow-x: auto;
+  padding: 1% 5% 1% 5%;
+  margin-bottom: 1em;
+}
+
+#features-wrapper #content {
+  height: 10em;
+  overflow: hidden;
+}
+
+#features-wrapper h3 {
+  height: 4em;
 }
