@@ -31,3 +31,9 @@ pre.src {
 #features-wrapper h3 {
   height: 4em;
 }
+
+#features-wrapper section section {
+    border: 2px solid rgb(237, 120, 106);
+    border-radius: 3px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+}
