@@ -1,4 +1,16 @@
 extends "base.html"
+block keywords
+  if article.keywords
+    #{article.keywords| join(',')}
+  else
+    #{article.tags | join(',')}
+block tags
+  #{article.tags | join(',')}
+block description
+  if article.description
+    #{article.description | join(',')}
+  else
+    #{article.summary | striptags}
 block content
   | {%- include 'header.html' %}
   // Main Wrapper

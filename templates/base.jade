@@ -9,6 +9,9 @@ html
     title {% block title %}{{ SITENAME }}{% endblock title %}
     meta(http-equiv='content-type', content='text/html; charset=utf-8')
     meta(name='viewport', content='width=1040')
+    meta(name="keywords", contents='{% block keywords %}{% endblock %}')
+    meta(name="description", contents='{% block description %}{{ SITESUBTITLE }}{% endblock %}')
+    meta(name="tags", contents='{% block tags %}{% endblock %}')
     link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700', rel='stylesheet', type='text/css')
     noscript
       link(rel='stylesheet', href='/theme/css/skel-noscript.css')

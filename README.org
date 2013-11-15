@@ -10,3 +10,25 @@
     There seems to be an issue with using jade files directly when running 'pelican'.
     So for now we have to prepare the html files by hand using pyjade
 
+**** Custom variables to use in pelicanconf.py
+***** CAT_STYLE and PAGES_STYLE
+      Allows to give a class to the links in the menus.
+      #+BEGIN_SRC python
+        CAT_STYLE = {
+            'Misc': 'fa-question'
+        }
+        PAGES_STYLE = {
+            'About': 'fa-question-circle'
+            }
+      #+END_SRC
+***** ORGMODE
+      Set to True in order to use org-style.css for orgmode generated highlighted code blocks
+***** Other
+	- DISQUS_SITENAME
+	- GITHUB_URL
+	- TWITTER_USERNAME
+	- GOOGLEPLUS_USER
+	- LINKEDIN_USER
+	- MAIL
+	- PHONE
+	- ABOUT_TEXT

@@ -6,6 +6,7 @@
     h1#logo
       a(href=SITEURL)= SITENAME
     //- p A responsive HTML5 site template. Manufactured by HTML5 UP.
+    p= SITESUBTITLE
     // Nav
     nav#nav
       ul
@@ -16,10 +17,10 @@
         if DISPLAY_PAGES_ON_MENU
           for p in PAGES
             li(class='active' if p == page)
-              a.fa(href=SITEURL+"/"+ p.url)
+              a.fa(href=SITEURL+"/"+ p.url, class=PAGES_STYLE[p.title] if p.title in PAGES_STYLE)
                 span= p.title
         if DISPLAY_CATEGORIES_ON_MENU
           for cat, null in categories
             li(class='active' if cat == category)
-              a.fa(href=SITEURL+"/"+cat.url)
+              a.fa(href=SITEURL+"/"+cat.url, class=CAT_STYLE[cat] if cat in CAT_STYLE)
                 span= cat
