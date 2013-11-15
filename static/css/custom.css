@@ -9,6 +9,12 @@
   list-style: disc;
 }
 
+#features-wrapper,
+#footer-wrapper {
+    padding-top: 1em;
+    padding-bottom: 1.1em;
+}
+
 #features-wrapper pre.src,
 #features-wrapper pre {
   overflow: hidden;
@@ -36,4 +42,12 @@ pre.src {
     border: 2px solid rgb(237, 120, 106);
     border-radius: 3px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    padding: 1em;
+}
+#features-wrapper section section footer.actions a.button.fa:before {
+    padding-right: 0px;
+}
+
+#content h1.title {
+    display: none;
 }

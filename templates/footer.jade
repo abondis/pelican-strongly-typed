@@ -59,12 +59,13 @@
                      Phone
                      a(href="tel:{{ PHONE }}") {{PHONE}}
   // Copyright
-  #copyright.container
-    ul.links
-      li &copy; Untitled. All rights reserved
-      li
-        | Demo images&colon;
-        a(href='http://regularjane.deviantart.com/') regularjane
-      li
-        | Design&colon;
-        a(href='http://html5up.net/') HTML5 UP
+  if COPYRIGHT is defined and SHOW_COPYRIGHT != False
+    #copyright.container
+      ul.links
+        li &copy; {{ COPYRIGHT }}
+          li
+            //-| Images:
+            //-a(href="http://facebook.com/DreametryDoodle") Dreametry Doodle
+            //-a(href="http://iconify.it") Iconify.it
+            li Design:
+              a(href="http://html5up.net") HTML5 UP

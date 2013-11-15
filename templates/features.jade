@@ -5,9 +5,7 @@
     section#features.container
       header
         h2
-          | Gentlemen&comma; behold&excl; This is
-          strong Strongly Typed
-          | &excl;
+          | Latest articles
       for article in articles_page.object_list
         //- FIXME: gross workaround ...
         if loop.index0 % 3  == 0
@@ -19,7 +17,8 @@
               a.image.image-full(href=SITEURL+"/"+article.url)
                 img(src=SITEURL+"/"+article.picture, alt='')
             header
-              h3= article.title
+              h3
+                a(href=SITEURL+"/"+article.url)= article.title
               span.byline= article.date
             != article.summary
             footer.actions
