@@ -923,3 +923,35 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+#content h1.title {
+    display: none;
+}
+
+.org-ul {
+  list-style: disc;
+}
+
+#features-wrapper pre.src,
+#features-wrapper pre {
+  overflow: hidden;
+}
+
+pre.src {
+  background-color: #ebebeb;
+  box-shadow: 3px 3px #666;
+  overflow-x: auto;
+  padding: 1% 5% 1% 5%;
+  margin-bottom: 1em;
+  border-radius: 4px;
+}
+
+#text-table-of-contents ul {
+    padding: 1em;
+    margin-bottom: 0em;
+}
+
+article.is-excerpt div#content {
+    height: 12em;
+    overflow: hidden;
+}

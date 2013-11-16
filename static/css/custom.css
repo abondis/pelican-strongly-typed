@@ -5,28 +5,10 @@
   padding: 0.2em 0.95em;
 }
 
-.org-ul {
-  list-style: disc;
-}
-
 #features-wrapper,
 #footer-wrapper {
     padding-top: 1em;
     padding-bottom: 1.1em;
-}
-
-#features-wrapper pre.src,
-#features-wrapper pre {
-  overflow: hidden;
-}
-
-pre.src {
-  background-color: #ebebeb;
-  box-shadow: 3px 3px #666;
-  overflow-x: auto;
-  padding: 1% 5% 1% 5%;
-  margin-bottom: 1em;
-  border-radius: 4px;
 }
 
 #features-wrapper #content {
@@ -46,8 +28,4 @@ pre.src {
 }
 #features-wrapper section section footer.actions a.button.fa:before {
     padding-right: 0px;
-}
-
-#content h1.title {
-    display: none;
 }
