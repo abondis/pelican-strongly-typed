@@ -955,3 +955,56 @@ article.is-excerpt div#content {
     height: 12em;
     overflow: hidden;
 }
+/* Tables copied from style.css */
+
+table
+{
+    width: 100%;
+}
+
+table
+{
+    width: 100%;
+}
+
+table tbody tr
+{
+    border-top: solid 1px #E5E5E5;
+}
+
+table tbody tr:first-child
+{
+    border-top: 0;
+}
+
+table td
+{
+    padding: 0.75em 1em 0.75em 1em;
+}
+
+table th
+{
+    text-align: left;
+    font-weight: bold;
+    padding: 0.75em 1em 0.75em 1em;
+}
+
+table thead
+{
+    background: #878787;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 0;
+    box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
+}
+
+table tfoot
+{
+    background: #F0F0F0;
+    border-top: solid 2px #E5E5E5;
+}
+
+table tbody
+{
+}
