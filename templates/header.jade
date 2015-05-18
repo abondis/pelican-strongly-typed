@@ -16,11 +16,11 @@
               span= title
         if DISPLAY_PAGES_ON_MENU
           for p in PAGES
-            li(class='active' if p == page)
-              a.fa(href=SITEURL+"/"+ p.url, class=PAGES_STYLE[p.title] if p.title in PAGES_STYLE)
+            li(class='active' if p = page)
+              a.fa(href="{}/{}".format(SITEURL, p.url or ""), class=PAGES_STYLE[p.title] if p.title in PAGES_STYLE)
                 span= p.title
         if DISPLAY_CATEGORIES_ON_MENU
           for cat, null in categories
-            li(class='active' if cat == category)
+            li(class='active' if cat = category)
               a.fa(href=SITEURL+"/"+cat.url, class=CAT_STYLE[cat] if cat in CAT_STYLE)
                 span= cat
