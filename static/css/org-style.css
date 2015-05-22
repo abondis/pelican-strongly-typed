@@ -938,7 +938,7 @@ a:hover {
 }
 
 pre.src {
-  background-color: #ebebeb;
+ /* background-color: #ebebeb;*/
   box-shadow: 3px 3px #666;
   overflow-x: auto;
   padding: 1% 5% 1% 5%;
